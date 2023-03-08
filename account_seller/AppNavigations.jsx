@@ -4,10 +4,12 @@ import { FlatList, Image, Text, TouchableOpacity, View } from "react-native";
 import { useContext, useEffect, useState } from "react";
 import { AcountContext } from "./context/AcountsContexts/AcountsContext";
 import useFetchData from "./context/API";
+import ContactPage from "./pages/ContactPage";
+import AboutPage from "./pages/AboutPage";
 const Tab = createBottomTabNavigator();
+
 const Home = () => {
   const [Data, setData] = useState([]);
-
   const { state, dispatch } = useContext(AcountContext);
   const getAllData = async () => {
     const data = await useFetchData("posts");
@@ -72,7 +74,7 @@ function MyTabs() {
       />
       <Tab.Screen
         name="Notifications"
-        component={Home}
+        component={ContactPage}
         options={{
           tabBarLabel: "Updates",
           tabBarIcon: ({ color, size }) => (
@@ -83,7 +85,7 @@ function MyTabs() {
       />
       <Tab.Screen
         name="Profile"
-        component={Home}
+        component={AboutPage}
         options={{
           tabBarLabel: "Profile",
           tabBarIcon: ({ color, size }) => (

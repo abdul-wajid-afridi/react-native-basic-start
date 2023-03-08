@@ -7,27 +7,9 @@ import MyTabs from "./AppNavigations";
 
 const Tab = createBottomTabNavigator();
 const Index = () => {
-  const HomeScreen = () => {
-    return (
-      <View>
-        <Text>
-          <MaterialCommunityIcons name="trash-can" size={50} />
-          <MaterialCommunityIcons name="home" size={50} />
-        </Text>
-        <Text>This is my Home Screen</Text>
-      </View>
-    );
-  };
-  const SettingsScreen = () => {
-    return <Text>This is my Home Screen</Text>;
-  };
   return (
     <NavigationContainer>
       <MyTabs />
-      {/* <Tab.Navigator>
-        <Tab.Screen name="Home" component={HomeScreen} />
-        <Tab.Screen name="Settings" component={SettingsScreen} />
-      </Tab.Navigator> */}
     </NavigationContainer>
   );
 };
